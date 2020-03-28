@@ -1,9 +1,27 @@
 h1 {
     color: aqua;
     text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
 }
 
 p {
     color: green;
     text-align: center;
+    font-weight: bold;
+    border: 3px solid red;
+}
+
+div {
+    background-color: teal;
+    height: 300px;
+    width: 200px;
+    margin: 30px;
+    padding: 20px;
+}
+
+span {
+    border: 5px solid black;
+    padding: 10px;
+    display: inline-block;
 }
