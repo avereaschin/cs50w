@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Print</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Styling when the page is printed */
+            @media print {
+                .screen-only {
+                    display: none;
+                }
+            }
+
+            /* Styling when the width of the page is >500px */
+            @media (min-width: 500px) {
+                h1::before {
+                    content: "Welcome to my Webpage!";
+                }
+            }
+            /* Styling when the width of the page is <500px */
+            @media (max-width: 499px) {
+                h1::before {
+                    content: "Welcome";
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1></h1>
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p class="screen-only">Third paragraph</p>
+    </body>
+</html>
