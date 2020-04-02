@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Child</title>
+        <style>
+            /* Space between ol#ol1 and li denotes all list item descendands */
+            ol#ol1 li {
+                color: red;
+            }
+
+            /* '>' denotes immediate child */
+            ol#ol2 > li {
+                color: blue;
+            }
+
+        </style>
+    </head>
+    <body>
+        <ol id="ol1">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>            
+            <ul>
+                <li>subitem 1</li>
+                <li>subitem 2</li>
+            </ul>
+            
+        </ol>
+
+        <ol id="ol2"> 
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>            
+            <ul>
+                <li>subitem 1</li>
+                <li>subitem 2</li>
+            </ul>
+            
+        </ol>
+    </body>
+</html>

@@ -2,11 +2,65 @@
 <html>
     <head>
         <title>Forms</title>
+        <style>
+            /* Styling tags based on attribute values */
+            input[type="text"] {
+                background-color: blueviolet;
+            }
+            input[type="number"] {
+                background-color: green;
+            }
+        </style>
     </head>
     <body>
         <form>
+            <!-- Text input with submit button -->
             <input type="text" placeholder="Full Name" name="name">
             <button>Submit!</button>
+        </form>
+
+        <br>
+        <br>
+
+        <form>
+            <div>
+                <input name="name" type="text" placeholder="Name">
+                <br>
+                <!-- Password input field -->
+                <input name="password" type="password" placeholder="Password">
+                <br>
+                <button>Submit</button>
+            </div>
+        </form>
+
+        <br>
+        <br>
+
+        <p>Pick a color:</p>
+        <form>
+            <div>
+                <!-- Radio buttons -->
+                <input type="radio" name="color" value="green"> Green <br>
+                <input type="radio" name="color" value="red"> Red <br>
+                <input type="radio" name="color" value="blue"> Blue <br>
+                <input type="radio" name="color" value="yellow"> Yello <br>
+            </div>
+
+            <div>
+                <!-- Prepopulated options -->
+                <input list="countries" name="country" placeholder="Country">
+                    <datalist id="countries">
+                        <option value="Afghanistan"></option>
+                        <option value="Albania"></option>
+                        <option value="Algeria"></option>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="howmany">Select a number:</label>
+                <input type="number" name="howmany" id="howmany" min="100" max="200">
+            </div>
         </form>
     </body>
 </html>
