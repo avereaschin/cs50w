@@ -1,0 +1,35 @@
+body {
+    background-color: lightgray;
+}
+
+img {
+    height: 600px;
+    margin-left: 30px;
+}
+
+img:hover {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+ul li {
+    display: inline-block;
+}
+
+.img_description_layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.container {
+    position: relative;
+    /* margin-right: 35px; */
+}
+
+.container:hover .img_description_layer {
+    visibility: visible;
+    opacity: 1;
+}

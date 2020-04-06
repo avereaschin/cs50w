@@ -1,0 +1,30 @@
+body {
+    background-color: lightgray;
+}
+
+img:nth-child(odd) {
+    float: right;
+}
+
+img:nth-child(even) {
+    float: left;
+}
+
+img {
+    margin: 20px;
+    width: 30%;
+}
+
+p {
+    margin: 10px;
+    text-align: justify;
+}
+
+p:last-child {
+    margin-bottom: 10px;
+}
+
+a#back-to-top {
+    margin-bottom: 20px; 
+    margin-left: ;   
+}
