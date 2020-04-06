@@ -1,9 +1,12 @@
 body {
-  background-color: lightgray;
+  background-color: teal;
 }
 
 h1 {
   margin: 20px;
+  font-weight: bolder;
+  color: white;
+  font-size: 200px;
 }
 
-/*# sourceMappingURL=stylesheet.css.map */
+/*# sourceMappingURL=index.css.map */
