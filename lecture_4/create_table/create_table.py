@@ -11,7 +11,8 @@ c = conn.cursor()
 
 c.execute('DROP TABLE IF EXISTS flights')
 
-create_table = """ CREATE TABLE flights (
+# flights table
+create_table1 = """ CREATE TABLE flights (
                     id SMALLINT AUTO_INCREMENT PRIMARY KEY, 
                     origin VARCHAR(255) NOT NULL,
                     destination VARCHAR(255) NOT NULL,
@@ -20,9 +21,24 @@ create_table = """ CREATE TABLE flights (
 
 """
 
-c.execute(create_table)
+c.execute(create_table1)
 
-data = [
+c.execute('DROP TABLE IF EXISTS passengers')
+
+# passengers table
+create_table2 = """ CREATE TABLE passengers (
+                    id SMALLINT AUTO_INCREMENT PRIMARY KEY,
+                    name VARCHAR(255) NOT NULL,
+                    flight_id SMALLINT,
+                    FOREIGN KEY (flight_id) REFERENCES flights(id)
+)
+
+"""
+
+c.execute(create_table2)
+
+# flights table date
+flight_data = [
     ['New York', 'London', '415'],
     ['Shanghai', 'Paris', '760'],
     ['Istanbul', 'Tokyo', '700'],
@@ -31,13 +47,32 @@ data = [
     ['Lima', 'New York', '455']
 ]
 
-insert_data = """INSERT INTO flights
+insert_into_flights = """INSERT INTO flights
     (origin, destination, duration)
     VALUES (%s, %s, %s)
 """
 
-for i in data:
-    c.execute(insert_data, tuple(i))
+for i in flight_data:
+    c.execute(insert_into_flights, tuple(i))
+
+# passengers table data
+passengers = [
+    ['Alice', '1'],
+    ['Bob', '1'],
+    ['Charlie', '2'],
+    ['Dave', '2'],
+    ['Erin', '4'],
+    ['Frank', '6'],
+    ['Grace', '6']
+]
+
+insert_into_passengers = """INSERT INTO passengers
+    (name, flight_id)
+    VALUES (%s, %s)
+"""
+
+for i in passengers:
+    c.execute(insert_into_passengers, tuple(i))
 
 c.execute('UPDATE flights SET duration = 430 WHERE origin = "New York" and destination = "London"')
 
