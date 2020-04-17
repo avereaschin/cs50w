@@ -10,4 +10,5 @@ def main():
     for flight in flights:
         print(f'{flight.origin} to {flight.destination}, {flight.duration} minutes')
 
-main()
+if __name__ == '__main__':
+    main()
