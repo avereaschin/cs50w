@@ -29,3 +29,23 @@ def book():
                 {'name': name, 'flight_id': flight_id})
     db.commit()
     return render_template('success.html')
+
+@app.route('/flights') 
+def flights():
+    """Lists all flights"""
+
+    flights = db.execute('SELECT * FROM flights').fetchall()
+    return render_template('flights.html', flights=flights)
+
+@app.route('/flights/<int:flight_id>')
+def flight(flight_id):
+    """Lists details about an individual flight."""
+
+    flight = db.execute('SELECT * FROM flights WHERE id = :id', {'id': flight_id}).fetchone()
+    if flight is None:
+        return render_template('error.html', message='Flight does not exist')
+
+    passengers = db.execute('SELECT * FROM passengers WHERE flight_id=:flight_id', 
+                            {'flight_id': flight_id}).fetchall()
+    return render_template('flight.html', flight=flight, passengers=passengers)
+    
