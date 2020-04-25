@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Login</h1>
+    <div class="col-3">
+        <form>
+            <div class="form-group">
+                <label for="inputUsername">Username</label>
+                <input type="text" class="form-control" id="inputUsername">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" id="inputPassword">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
